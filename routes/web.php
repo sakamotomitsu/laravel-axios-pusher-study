@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('chat', 'ChatController@index');
+
+Route::get('ajax/chat', 'Ajax\ChatController@index'); // メッセージ一覧を取得
+Route::post('ajax/chat', 'Ajax\ChatController@create'); // チャット登録
