@@ -20,6 +20,8 @@ class ChatController extends Controller
     'body' => $request->message
     ]);
 
+    event(new MessageCreated($message));
+
   }
 
 }
