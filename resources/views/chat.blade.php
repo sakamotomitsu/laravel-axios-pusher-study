@@ -1,4 +1,7 @@
 <html>
+<head>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+</head>
 <body>
 <div id="chat">
   <textarea v-model="message"></textarea>
@@ -24,6 +27,11 @@
       message: '',
       messages: []
     },
+
+    mounted() {
+      this.getMessages();
+    },
+
     methods: {
       getMessages() {
 
@@ -50,9 +58,6 @@
         });
 
       }
-    },
-    mounted() {
-      this.getMessages();
     }
   });
 
